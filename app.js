@@ -39,10 +39,10 @@ const j = 7
 const k = 21
 
 console.log('i > j', i > j)
-console.log('a < j', i < j)
+console.log('i < j', i < j)
 console.log('i == j', i == j)
 console.log('i == k', i == k)
-console.log('i>=c', i >= k)
+console.log('i>=k', i >= k)
 
 console.log('--------------------------------')
 // --------------------------------
@@ -82,4 +82,3 @@ console.log(z > w && z < y)
 // console.log('true|| true', true || true)
 // console.log('true|| false', true || false)
 // console.log('false|| true', false || true)
-
