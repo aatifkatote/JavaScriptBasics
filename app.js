@@ -17,11 +17,15 @@ console.log(b % a)
 
 console.log('-------------------------------------------')
 
-let c = 5
+//Concatenation 
+const c= "3"
+const d= 3
+console.log(c-d)
 
-c *= 5
+//Assignment Operators
+let n= "Aatif"
+let x = 19
+ x+=n
+ console.log(x)
+ console.log(typeof x)
 
-// c operator=number is equivalent to c = c operator number
-// c = c * 5 = 5*5 = 25
-
-console.log(c)
