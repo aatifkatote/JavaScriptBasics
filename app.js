@@ -1,22 +1,27 @@
-// Data types
-// Primitive Data Types
+//   Arithmetic operators
 
-let age = 19;
-console.log(age)
-console.log(typeof age)
+const a = 2
+const b = 15
 
-let brand
-console.log(brand)
+console.log(a + b)
 
-let Name ="Aatif";
-console.log(Name)
-console.log(typeof Name)
+console.log(a - b)
 
+console.log(a * b)
 
-//non-primitive
+console.log(a / b)
 
-let arr = [1,2,3,4,5]
-arr.push("hello")
-arr.unshift(true)
-console.log(arr)
-console.log(typeof arr)
+console.log(a ** b)
+
+console.log(b % a)
+
+console.log('-------------------------------------------')
+
+let c = 5
+
+c *= 5
+
+// c operator=number is equivalent to c = c operator number
+// c = c * 5 = 5*5 = 25
+
+console.log(c)
