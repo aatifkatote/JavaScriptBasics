@@ -1,15 +1,22 @@
-// const element = document.getElementById('selectme')
+const element = document.querySelector('#selectme')
+// element.innerHTML = "This is from JS"
+// console.log(element)
 
-// const element = document.getElementsByClassName('heading')
+// element.style.color = "cyan"
+// element.style.fontSize = "40px"
+// element.style = "display:none"
 
-// const element = document.getElementsByTagName('h2')
+// console.log(element.classList)
+// element.classList.add('five')
+// console.log(element.classList)
+// element.classList.remove('one')
+// console.log(element.classList)
 
-//const element = document.querySelector('.heading')
-//QuerySelector only returns the first match
+// const body = document.querySelector('body')
+// console.log(body.classList.toggle('dark'))
 
-//const element = document.querySelectorAll('.heading')
-//QuerySelectorAll returns all of the matches similar to array
+const value = element.classList.contains('five')
+console.log(value)
 
-const element = document.querySelector('h3.heading')
-
-console.log(element)
+const values = element.classList.contains('three')
+console.log(values)
