@@ -1,75 +1,79 @@
-console.log("MERGED CLASS 1 ES6")
+console.log("MERGED CLASS 2 ES6")
 
-var arr = [1,2,3,4];
-console.log(arr[2]);
+let ranks = [1, 2, 3, 4];
 
-var [one, two, three, four, five] = arr; //ES6 Destructuring
-console.log(three);
-console.log(four);
-console.log(five);
+console.log(
+  ranks.map((e, index) => {      //If {} braces used, then return statement is a must
+    return e * 100;              //map returns new array
+  })                             //e represents each element, it has to be placed first
+);
 
+console.log(
+  ranks.forEach((e, index) => {   //for each doesn't "return" new array and thats why it is undefined
+    return e * 100;               //for each can print but not return
+  })
+);
 
-function getscores() {
-    return [90,100];
-}
-
-let [x,y,z] = getscores();
-console.log(x);
-console.log(y);
-console.log(z);
-
-
-const obj = {
-    fullname: "Aatif Katote",
-    email: "aatifkatote@gmail.com",
-    age: 18
-}
-
-console.log(obj.email)
-
-let {dum, age, email, fullname} = obj;
-console.log(fullname)
-console.log(dum)
+let newarr = ranks.map((e, index) => {
+    console.log(e)                //this will return all arrays
+    if(e%2===0)                   //it will return only even array, the odd ones will be undefined
+        return e                  //As map works on each element
+})
+console.log(newarr);            
 
 
-let person = {
-    firstname: "Aatif",
-    lastname: "Katote",
-    age1: 18,
-    middlename: "DNA"
-}
-let {age1, firstname, lastname, middlename="" } = person;
-console.log(age1);
-console.log(firstname);
-console.log(lastname);
-console.log(middlename);
-
-// function add(x, y) {
-//     return x+y;
-// }
-// console.log(add(10, 20));
-
-// let add = function(x,y) {
-//     return x+y;
-// }
-// console.log(add(10,20))
-
-let add = (x, y) => {
-  return x + y;
-};
-console.log(add(10, 20));
+// Filter
+let newfilterarr = ranks.filter((e, index) => {
+    if(e%2===0)
+        return e
+})
+console.log(newfilterarr);        //filter returns arrays that match the condition (without undefined)
 
 
-const counter = {
-    count: 1,
-    aatif:function(){
-        return ++(this.count)
-    },
-    //key: this.location.href
-}
 
-console.log(counter)
-console.log(counter.aatif())
-console.log(counter.aatif())
-console.log(counter.aatif())
-console.log(counter)
+// PROMISE
+
+// PROMISE IS AN OBJECT THAT RETURNS A VALUE THAT WE HOPE TO RECEIVE IN THE FUTURE BUT NOT IMMEDIATELY
+// PROMISE HAS THREE STATES: PENDING, FULFILLED REJECTED
+// PENDING ENDS IN RESOLVE OR REJECT
+
+let concert = true;     //if the value is true it will only print resolve and not reject
+
+let attendConcert = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        if (concert) {
+            resolve("BOB ATTENDED THE CONCERT");
+        }
+        else {
+            reject("BOB FAILED TO ATTEND THE CONCERT");
+        }
+    }, 2000);  // 2 seconds in milliseconds. Without setTimeout promise will be fulfilled instantaneously
+});
+
+console.log(attendConcert)
+
+// let attendConcert = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         if (concert) {
+//             resolve("BOB ATTENDED THE CONCERT");
+//         }
+//         else {
+//             reject("BOB FAILED TO ATTEND THE CONCERT");
+//         }
+//     }, 2000);
+// });
+
+// console.log(attendConcert)
+
+// attendConcert.then((data)=>console.log(data));  //used to prints the promise directly if resolved
+
+// attendConcert.catch((error)=>console.log(error)); //used to prints the promise directly if rejected
+
+attendConcert.then((data)=>console.log(data)).catch((error)=>console.log(error));
+// When its false the rejected objected us going inside then and it is returning a error
+// Since it is returning an error the catch statement catches it and hence prints it
+// This is the proper way to use then and catch simultaneously.
+
+console.log("HI, I WON'T WAIT FOR ANYONE")
+
+console.log("HI, I AM DYING, I DON'T WANT TO WAIT")
